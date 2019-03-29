@@ -24,8 +24,8 @@ const student = {
   }
 };
 
-// Using basic object destructuring:
-//  - use an object literal on the left-hand side of an assignment expression
+// *!* Using basic object destructuring:
+//       - use an object literal on the left-hand side of an assignment expression
 
 const { firstname, lastname, country } = student;
 console.log(firstname, lastname, country); // "Joe", "Schmoe", "USA"
@@ -35,7 +35,8 @@ console.log(firstname, lastname, country); // "Joe", "Schmoe", "USA"
 // Variables are created if they do not exist
 
 // Using destructuring in variable assignment:
-//  - enclose in parentheses since it is an assignment expression
+//  - enclose in parentheses since it is an assignment expression and block
+//    statements cannot appear on the left hand side of an assignment
 
 let country = "Brazil";
 let firstname = "Kent";
@@ -49,3 +50,25 @@ const student = {
 
 // reassign firstname and lastname using destructuring
 ({ firstname, lastname } = student);
+
+// country is unchanged
+console.log(firstname, lastname, country); // Kent Clark Bromania
+
+// Using default values:
+//   - a way to assign a value to a variable of destructed object in order
+//     to avoid undefined
+
+const person = {
+  name: "Joe Schmoe",
+  country: "Mexico"
+};
+
+// Assign a default value of 31 to age if undefined
+// since age key does not exist on person object
+const { name, country, age = 31 } = person;
+
+console.log(`${name} from ${country}, ${age} years old.`);
+
+// Using different variable names
+// - use syntax [object_key] : [variable_name] to assign to a variable
+//   name that does not correspond to an object key
