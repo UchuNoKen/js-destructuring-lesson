@@ -38,3 +38,21 @@ const rgb = [200, 255, 100];
 const [, , blue] = rgb;
 
 console.log(`Blue: ${blue}`); // Blue: 100
+
+// Swapping Variables:
+//  - avoid the additional variable
+
+let width = 300;
+let height = 400;
+let landscape = true;
+
+console.log(`${width} x ${height}`); // 300 x 400
+
+if (landscape) {
+  // swap the variables
+  [width, height] = [height, width];
+
+  console.log(`${width} x ${height}`); // 400 x 300
+
+  landscape = false;
+}
