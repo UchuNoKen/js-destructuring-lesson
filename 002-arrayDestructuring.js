@@ -28,3 +28,13 @@ console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 200, G: undefined, B: 2
 // red takes value of first index of 'rgb'
 // green is undefined because there is only one value
 // blue has a default value
+
+// Skipping items:
+// - using comma separation
+
+const rgb = [200, 255, 100];
+
+// skip first two items, assign only the third item
+const [, , blue] = rgb;
+
+console.log(`Blue: ${blue}`); // Blue: 100
