@@ -67,8 +67,37 @@ const person = {
 // since age key does not exist on person object
 const { name, country, age = 31 } = person;
 
-console.log(`${name} from ${country}, ${age} years old.`);
+console.log(`${name} from ${country}, ${age} years old.`); // Joe Schmoe from Mexico, 31 years old.
 
-// Using different variable names
+// Using Different Variable Names
 // - use syntax [object_key] : [variable_name] to assign to a variable
 //   name that does not correspond to an object key
+
+const person = {
+  name: "Joe Schmoe",
+  country: "Mexico"
+};
+
+// assign default value of 31 to years if age is undefined
+const { name: fullname, country: place, age: years = 31 } = person;
+
+// Joe Schmoe from Mexico, 31 years old.
+console.log(`${fullname} from ${place}, ${years} years old.`);
+
+// Nested Object Destructuring
+//  - accessing nested objects
+
+const student = {
+  name: "Joe Schmoe",
+  age: 16,
+  scores: {
+    math: 100,
+    english: 99
+  }
+};
+
+// using nested destructuring to extract math and science from scores
+const {
+  name,
+  scores: { math, science = 50 }
+} = student;
