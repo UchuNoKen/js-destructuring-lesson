@@ -56,3 +56,16 @@ if (landscape) {
 
   landscape = false;
 }
+
+// Nested Array Destructuring
+//   - to do destructure nested arrays, the corresponding item must be an array
+
+const color = ["#FF00FF", [255, 0, 255], "rgb(255, 0, 255)"];
+
+// use nested destructuring to assign red, green and blue
+const [hex, [red, green, blue]] = color;
+
+console.log(hex, red, green, blue); // #FF00FF 255 0 255
+
+// Rest Items
+//  -
