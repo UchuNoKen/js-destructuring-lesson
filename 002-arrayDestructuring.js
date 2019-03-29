@@ -84,3 +84,32 @@ console.log(otherColors); // ['green', 'blue', 'indigo', 'violet']
 // second item omitted
 // third item assigned to yellow variable
 // rest of items assigned to otherColors
+
+// Cloning Arrays
+
+// ES5 way
+
+const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+// clone with splice
+const rainbowClone1 = rainbow.slice();
+
+console.log(rainbow === rainbowClone1); // false
+console.log(rainbowClone1); // ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+
+// cloning with concat
+const rainbowClone2 = rainbow.concat();
+
+console.log(rainbow === rainbowClone2); // false
+
+// ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+console.log(rainbowClone2);
+
+// cloning with spread operator
+const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+// cloning with spread operator
+const [...rainbowClone] = rainbow;
+
+console.log(rainbow === rainbowClone); // false
+console.log(rainbowClone); //  ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
