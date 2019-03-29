@@ -68,4 +68,19 @@ const [hex, [red, green, blue]] = color;
 console.log(hex, red, green, blue); // #FF00FF 255 0 255
 
 // Rest Items
-//  -
+//  - assigning values to some variables, and capturing others
+//  - rest item must always appears as the last item
+
+const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+// assign the first and third items to red and yellow
+// assign the remaining items to otherColors variable using the spread operator(...)
+
+const [red, , yellow, ...otherColors] = rainbow;
+
+console.log(otherColors); // ['green', 'blue', 'indigo', 'violet']
+
+// first item assigned to red variable
+// second item omitted
+// third item assigned to yellow variable
+// rest of items assigned to otherColors
