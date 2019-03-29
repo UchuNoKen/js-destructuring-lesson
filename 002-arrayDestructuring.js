@@ -10,3 +10,21 @@ const rgb = [255, 200, 0];
 const [red, green, blue] = rgb;
 
 console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 255, G: 200, B: 0
+
+// Using default values:
+//   - if number of items in array more than local variables
+//      ... excess items are not mapped
+
+//   - if number of local variables more than number of items
+//      ... excess variables will be assigned value of undefined, unless
+//          a default value is specified
+
+const rgb = [200];
+
+const [red = 255, green, blue = 255] = rgb;
+
+console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 200, G: undefined, B: 255
+
+// red takes value of first index of 'rgb'
+// green is undefined because there is only one value
+// blue has a default value
