@@ -4,6 +4,8 @@ const rgb = [255, 200, 0];
 
 // *!* Using basic array destructuring:
 //       - use an array literal on the left-hand side of an assignment expression
+//       - variables are mapped to the corresponding item at the same index, so
+//         position matters
 
 const [red, green, blue] = rgb;
 
